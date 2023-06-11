@@ -14,11 +14,10 @@ else if( pid1==0)
 {
 printf("first child pid=%d\n", getpid());
 pid2=fork();
-if( pid2 > 0)
+if( pid2 > 0) // if pid2 parent process
  exit(0);
-else if(pid2==0)
-printf("second child pid = %d\n parent pid=%d\n", 
-getpid(), getppid());
+else if(pid2==0) //if pid2 is child process
+printf("second child pid = %d\n parent pid=%d\n", getpid(), getppid()); // getpid() -> prints pid, getppid() -> gets parent id
 exit (0);
 }
 }
